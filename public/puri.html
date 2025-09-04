@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Puri</title>
+    <style>
+        body {
+            background: url('puri.webp') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            animation: fadeIn 1.5s ease-in-out;
+            backdrop-filter: blur(5px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #d35400;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 25px;
+            gap: 15px;
+        }
+
+        .info-block {
+            padding: 15px;
+            border-radius: 10px;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info-block.helpline {
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .info-block.helpline h3 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #f2f2f2;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .info-block.helpline h3:hover {
+            background-color: #e9e9e9;
+        }
+        
+        .info-block.helpline a {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #d35400;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .info-block.helpline a:hover {
+            color: #e67e22;
+        }
+
+        .location-block {
+            background-color: #e8f5e9;
+            border: 1px solid #4caf50;
+        }
+
+        .weather-block {
+            background-color: #e3f2fd;
+            border: 1px solid #2196f3;
+        }
+        
+        .temple-block {
+            background-color: #fff3e0;
+            border: 1px solid #ff9800;
+        }
+
+        .beach-block {
+            background-color: #e1f5fe;
+            border: 1px solid #03a9f4;
+        }
+
+        .park-block {
+            background-color: #fbe9e7;
+            border: 1px solid #ff5722;
+        }
+
+        .info-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-link {
+            text-decoration: none;
+            background-color: #e67e22;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .button-link:hover {
+            background-color: #d35400;
+            transform: scale(1.05);
+        }
+
+        .explore-button {
+            margin-top: 30px;
+            font-size: 1.1em;
+            padding: 15px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome Visitors to Jagannath place Puri 💐💐</h1>
+        
+        <div class="section">
+             <div class="info-block location-block">
+                 Track your Current location <br> <a href="#" class="button-link" aria-placeholder="Click me">Click me</a>
+             </div>
+             <div class="info-block weather-block">
+                 Check your weather <a href="#" class="button-link" aria-placeholder="Click me">Click me</a>
+             </div>
+        </div>
+
+        <div class="section">
+             <h2>Help Line Numbers</h2>
+             <div class="info-block helpline">
+                <h3> Police cell <a href="tel:+919937100285">+91 9937100285</a></h3>
+                <h3> Tourist cell <a href="tel:+919937100416">+91 9937100416</a></h3>
+                <h3> Ambulance cell <a href="tel:+918658941501">+91 8658941501</a></h3>
+             </div>
+        </div>
+
+        <div class="section">
+            <h2>Here are the Good Safe places You Can Visit</h2> 
+            <div class="info-block temple-block">
+                <h3>Shree Jagannath Temple <a href="https://www.google.com/maps/dir/Puri,Odisha/Shree Jagannath Temple" class="button-link" aria-placeholder="Go">Go</a></h3>
+            </div>
+            <div class="info-block temple-block">
+                 <h3>Shree Gundicha Temple <a href="https://www.google.com/maps/dir/Puri,Odisha/Shree Gundicha Temple " class="button-link" aria-placeholder="Go">Go</a> </h3>
+            </div>
+            <div class="info-block beach-block">
+                 <h3>Golden Beach <a href="https://www.google.com/maps/dir/Puri,Odisha/Golden Beach" class="button-link" aria-placeholder="Go">Go</a></h3>
+            </div>
+            <div class="info-block park-block">
+                <h3>Wonder World Water Park & Resort <a href="https://www.google.com/maps/dir/Puri,Odisha/Wonder World Water Park & Resort" class="button-link" aria-placeholder="Go">Go</a></h3>
+            </div>
+             <a href="#" class="button-link explore-button" aria-placeholder="Explore More">Explore More</a>
+        </div>
+    </div>
+</body>
+</html>
+
+ 

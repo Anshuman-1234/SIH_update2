@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Form for Users</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+    body {
+    background-image: url('front.jpg');
+    background-color: #f0f2f5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.main {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    box-sizing: border-box;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    z-index: 1;
+     
+}
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+ 
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Styling for the new background particles effect */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 10%);
+            animation: particles 15s infinite;
+            z-index: 0;
+        }
+
+        @keyframes particles {
+            0% { transform: scale(1) translate(0, 0); }
+            25% { transform: scale(1.2) translate(10px, -15px); }
+            50% { transform: scale(1) translate(0, 0); }
+            75% { transform: scale(1.3) translate(-10px, 15px); }
+            100% { transform: scale(1) translate(0, 0); }
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-weight: 700;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .box {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.4);
+            color: #2c3e50;
+        }
+
+        .box::placeholder {
+            color: #6a6a6a;
+        }
+
+        .box:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        #submit {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        #submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(46, 204, 113, 0.4);
+        }
+
+        #submit:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 main">
+                <form action="/sign_up" method="POST">
+                    <h2>Sign Up</h2>
+                    <input type="text" class="box" id="name" name="name" placeholder="Full Name" required />
+                    <input type="email" class="box" id="email" name="email" placeholder="Email Address" required />
+                    <input type="number" class="box" id="phone" name="phone" placeholder="Mobile Number" required />
+                    <input type="password" class="box" id="password" name="password" placeholder="Password" required />
+                    <input type="submit" value="Sign Up" id="submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
