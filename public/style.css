@@ -1,3 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: url(/pngtree-server-farm-banner-system-administration-image_1374995.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-top: 20px;  
+    margin-bottom: 30px;
+}
+
+.form-container, table {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #6200ea;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #3700b3;
+}
+
+p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #6200ea;
+    color: #fff;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+td form {
+    display: inline-block;
+}
+
+td select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.admin-actions {
+    text-align: center;
+}
+
+.admin-actions button {
+    padding: 8px 12px;
+    background-color: #6200ea;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.admin-actions button:hover {
+    background-color: #3700b3;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #6200ea;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a.active {
+    background-color: #6200ea;
+    color: white;
+    border: 1px solid #6200ea;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+ 
+@media (max-width: 768px) {
+    th, td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    td select {
+        margin-right: 5px;
+    }
+
+    .submit-btn, .admin-actions button {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .pagination a {
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    th, td {
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    .submit-btn, .admin-actions button {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    .pagination a {
+        padding: 4px 8px;
+        margin: 0 2px;
+    }
+}
+
 .main {
     padding: 20px;
     font-family: 'Helvetica', serif;
@@ -30,3 +234,5 @@ input[type=submit] {
     margin: 4px 2px;
     border-radius: 10px;
 }
+
+

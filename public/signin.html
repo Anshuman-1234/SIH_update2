@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SignUp Form for Users</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <style>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn Form for Users</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
         body {
             background-image: url('front.jpg');
             background-color: #f0f2f5;
@@ -65,7 +67,8 @@
                 transform: scale(1);
             }
         }
- 
+
+         
         body::before {
             content: '';
             position: absolute;
@@ -153,75 +156,23 @@
         #submit:active {
             transform: translateY(0);
         }
-
-        .signin-link {
-            margin-top: 20px;
-            color: #2c3e50;
-            font-size: 16px;
-        }
-
-        .signin-link a {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .signin-link a:hover {
-            color: #2980b9;
-            text-decoration: underline;
-        }
-     
-    .help-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: #3498db;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      animation: pulse 2s infinite ease-in-out;
-    }
-
-    .help-button:hover {
-      background-color: #2980b9;
-    }
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-  </style>
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-3 col-md-6 main">
-        <form action="/sign_up" method="POST">
-          <h2>Sign Up</h2>
-          <a href="bot.html" class="help-button">Get Help</a>
-          <input type="text" class="box" id="name" name="name" placeholder="Full Name" required />
-          <input type="email" class="box" id="email" name="email" placeholder="Email Address" required />
-          <input type="number" class="box" id="phone" name="phone" placeholder="Mobile Number" required />
-          <input type="password" class="box" id="password" name="password" placeholder="Password" required />
-          <input type="submit" value="Sign Up" id="submit" />
-          <p class="signin-link"> Already have an account? <a href="/signin.html">Sign In</a> </p>
-        </form>
-      </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 main">
+                <form id="signInForm" action="/sign_in" method="POST">
+                    <h2>Sign In</h2>
+                    <input type="email" class="box" id="email" name="email" placeholder="Email Address" required />
+                    <input type="password" class="box" id="password" name="password" placeholder="Password" required />
+                    <input type="submit" value="Sign In" id="submit" />
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </body>
+
 </html>
- 
-
-
-
-  

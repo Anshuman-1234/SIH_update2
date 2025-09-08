@@ -1,0 +1,61 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMERGENCY SOS</title>
+  <style>
+    body {
+      background-color: rgb(226, 31, 31);
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    .sos-button {
+      background-color: #fff;
+      color: rgb(226, 31, 31);
+      padding: 20px 40px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    
+    .sos-button:hover {
+      background-color: #ddd;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="color: #fff;">EMERGENCY SOS</h1>
+    <img src="sos.jpg" alt="SOS" style="width: 100px; height: 100px; margin: 20px;">
+    <h2 style="color: #fff;">Our team will definitely help you... Till that time... Stay Safe...We are with You</h2>
+    <button class="sos-button">STAY SAFE</button>
+  </div>
+</body>
+</html>
+
+ 

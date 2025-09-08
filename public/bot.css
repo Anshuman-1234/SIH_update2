@@ -1,0 +1,155 @@
+* {
+box-sizing: border-box;
+}
+
+body {
+ font-family: 'Poppins', sans-serif;
+  background: #222831;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+ margin: 0;
+}
+
+.container {
+ width: 600px;
+  margin: 50px auto;
+padding: 20px;
+border-radius: 10px;
+box-shadow: #64646f33 0px 7px 29px 0px;
+ background: #31363F;
+}
+
+.title {
+text-align: center;
+ font-size: 24px;
+ font-weight: bold;
+color: #edf1f3;
+}
+
+
+
+
+.chat {
+  height: 400px;
+  overflow-y: scroll;
+  margin: 20px 0;
+  padding: 10px;
+  border: 2px solid #545250;
+  border-radius: 5px;
+  background: #222831;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.user {
+  justify-content: flex-end;
+}
+
+.bot {
+  justify-content: flex-start;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.user .avatar {
+  order: 2;
+  background: url("avatar.jpg");
+  background-size: cover;
+}
+
+.bot .avatar {
+  order: 1;
+  background: url("bot.jpg");
+  background-size: cover;
+}
+
+.text {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+}
+
+.user .text {
+  background: #4a4d52;
+}
+
+.bot .text {
+  background: #8c8c8e;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  flex-grow: 1;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #cbcbce;
+  border-radius: 5px;
+  outline: none;
+  font-size: 20px;
+}
+
+.input:focus {
+  border-color: #8296d0;
+  color: #1e1f1f;
+}
+
+
+ 
+
+.button {
+width: 50px; 
+height: 50px; 
+border: none;
+ background: #31363F;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+outline: none;
+margin-left: 10px;
+border-radius: 50%;
+}
+
+.button:hover {
+background-color: #4a4d52;
+}
+
+.button i {
+ font-size: 1.5rem; 
+}
+
+.chat::-webkit-scrollbar {
+ width: 10px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+background: #bcbdc0; border-radius: 10px;
+}
