@@ -11,10 +11,10 @@ app.use(bodyParser.urlencoded({
     extended:true
 }))
 
-mongoose.connect('mongodb://127.0.0.1:27017/users',{
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-})
+mongoose.connect('mongodb+srv://techjourney1234_db_user:rxZKcq6vMlLfDe53@cluster0.q626nkg.mongodb.net/users?retryWrites=true&w=majority&appName=Cluster0', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 var db=mongoose.connection;
 
