@@ -10,6 +10,7 @@
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
         body {
+            overflow-y: auto;
             background-image: url('front.jpg');
             background-color: #f0f2f5;
             background-size: cover;
@@ -156,6 +157,11 @@
         #submit:active {
             transform: translateY(0);
         }
+        .signin-link {
+            margin-top: 20px;
+            color: #2c3e50;
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -169,6 +175,7 @@
                     <input type="email" class="box" id="email" name="email" placeholder="Email Address" required />
                     <input type="password" class="box" id="password" name="password" placeholder="Password" required />
                     <input type="submit" value="Sign In" id="submit" />
+                    <p class="signin-link"> Don`t have an account? <a href="index.html">Sign Up</a> </p>
                 </form>
             </div>
         </div>

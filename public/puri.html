@@ -20,6 +20,7 @@
     }
 
     body {
+      overflow-y: auto;
       background: no-repeat center center fixed;
       background-size: cover;
       background-color: var(--background-color);
@@ -283,15 +284,13 @@
 <body>
   <div class="container" style="background-color: rgb(131, 119, 143);">
     <div class="heading-box">
-      <h1 id="welcome">Welcome Visitors to Jagannath place Puri 💐💐</h1>
+      <h1 id="welcome">Welcome Visitors to Jagannath place Puri </h1>
     </div>
 
-    <a href="bot.html" class="help-button">Get Guide</a>
+    <a href="bot.html" style="text-decoration: none;" class="help-button">Get Guide</a>
 
      
-    <div class="section">
-      <a href="sos.html" class="sos-button"><b>🚨 EMERGENCY SOS 🚨</b></a>
-    </div>
+     
 <div style="text-align: center; margin-top: 20px;">
     <a href="navigation.html" style="
         text-decoration: none;
@@ -311,11 +310,10 @@
     <div class="section">
       <h2>🚨 Emergency 🚨</h2>
       <hr>
-
       <div class="info-block" style="background-color: #7bec7b; border: 1px solid #99ff99;">
         <div class="icon">🏨</div>
         <h3>Check Nearby Safe & affordable hotels</h3>
-        <a href="https://www.goibibo.com/hotels/" class="main-button" target="_blank">Check</a>
+        <a href="https://www.goibibo.com/hotels/" style="text-decoration: none;" class="main-button" target="_blank">Check</a>
       </div>
 
       <div class="info-block" style="background-color: #ebaeae; border: 1px solid #ff9999;">
@@ -333,14 +331,18 @@
       <div class="info-block" style="background-color: #e0e77f; border: 1px solid #99ff99;">
         <div class="icon">📲</div>
         <h3>Check for Fake Calls</h3>
-        <a href="https://www.phonevalidator.com/" class="main-button" target="_blank">Check</a>
+        <a href="https://www.phonevalidator.com/" style="text-decoration: none;" class="main-button" target="_blank">Check</a>
       </div>
 
       <div class="info-block" style="background-color: #e9a97e; border: 1px solid #ffd199;">
         <div class="icon">🌐</div>
         <h3>Check Website Security</h3>
-        <a href="https://www.getsafeonline.org/checkawebsite/" class="main-button" target="_blank">Check</a>
+        <a href="https://www.getsafeonline.org/checkawebsite/" class="main-button" style="text-decoration: none;" target="_blank">Check</a>
       </div>
+    </div>
+
+    <div class="section">
+      <a href="sos.html" class="sos-button"><b>🚨 EMERGENCY SOS 🚨</b></a>
     </div>
 
     <div class="section">
@@ -364,7 +366,7 @@
     let placeName = urlParams.get('place_name') || 'Puri';
     const imageData = urlParams.get('image_data');
 
-    document.getElementById('welcome').textContent = `Welcome to ${placeName} 💐💐`;
+    document.getElementById('welcome').textContent = `Welcome to ${placeName} `;
     document.getElementById('track').textContent = placeName;
 
     if (imageData) {

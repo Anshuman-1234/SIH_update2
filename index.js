@@ -7226,42 +7226,84 @@ app.post('/sign_in', async (req, res) => {
             res.redirect('dashboard.html');
         } else {
       
-            res.status(401).send('Invalid email or password.');
+            // res.status(401).send('Invalid email or password.');
+            res.redirect('error.html')
         }
     } catch (err) {
         console.error(err);
         res.status(500).send('An error occurred. Please try again later.');
     }
 });
+// app.post('/check-place', async (req, res) => {
+//   let place = req.body.place.trim().toLowerCase();
+//   try {
+//     const result = dataset.find(item => item.Name.toLowerCase().includes(place));
+//     if (result) {
+//       res.send({
+//         exists: true,
+//         zone: result.Zone,
+//         placeName: result.Name,
+//         City: result.City,
+//         img: result.img_link,
+//         state:result.State,
+//         type:result.Type,
+//         establishment:result['Establishment Year'],
+//         time:result['time needed to visit in hrs'],
+//         fees:result['Entrance Fee in INR'],
+//         airport:result['Airport with 50km Radius'],
+//         off:result['Weekly Off'],
+//         dslr:result['DSLR Allowed'],
+//         risk:result.Risk_Factor,
+//         risk_des:result.Risk_Factor_Description,
+//         visit_time:result.Best_Time_to_visit,
+//         safety:result.Safety_Precautions,
+
+//       });
+//     } else {
+//       res.send({ exists: false });
+//     }
+//   } catch (err) {
+//     res.status(500).send({ message: 'Error checking place' });
+//   }
+// });
+
+
 app.post('/check-place', async (req, res) => {
   let place = req.body.place.trim().toLowerCase();
+
   try {
-    const result = dataset.find(item => item.Name.toLowerCase().includes(place));
-    if (result) {
-      res.send({
-        exists: true,
+    // Find all matching places
+    const matchedPlaces = dataset.filter(item =>
+      item.Name.toLowerCase().includes(place)
+    );
+
+    if (matchedPlaces.length > 0) {
+      const places = matchedPlaces.map(result => ({
         zone: result.Zone,
         placeName: result.Name,
         City: result.City,
         img: result.img_link,
-        state:result.State,
-        type:result.Type,
-        establishment:result['Establishment Year'],
-        time:result['time needed to visit in hrs'],
-        fees:result['Entrance Fee in INR'],
-        airport:result['Airport with 50km Radius'],
-        off:result['Weekly Off'],
-        dslr:result['DSLR Allowed'],
-        risk:result.Risk_Factor,
-        risk_des:result.Risk_Factor_Description,
-        visit_time:result.Best_Time_to_visit,
-        safety:result.Safety_Precautions,
+        state: result.State,
+        type: result.Type,
+        establishment: result['Establishment Year'],
+        time: result['time needed to visit in hrs'],
+        fees: result['Entrance Fee in INR'],
+        airport: result['Airport with 50km Radius'],
+        off: result['Weekly Off'],
+        dslr: result['DSLR Allowed'],
+        risk: result.Risk_Factor,
+        risk_des: result.Risk_Factor_Description,
+        visit_time: result.Best_Time_to_visit,
+        safety: result.Safety_Precautions,
+      }));
 
-      });
+      res.send({ exists: true, places });
     } else {
-      res.send({ exists: false });
+       
+      res.send({ exists: false, places: [] });
     }
   } catch (err) {
+    console.error('Error in /check-place:', err);
     res.status(500).send({ message: 'Error checking place' });
   }
 });

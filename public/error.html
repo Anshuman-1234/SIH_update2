@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #d34141;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .error-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        #error-message {
+            color: #d9534f;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        #error-message .emoji {
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+
+        #redirect-message {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        #countdown {
+            font-weight: bold;
+            color: #5cb85c;
+            font-size: 1.5em;
+        }
+        
+        .pulse {
+            animation: pulse 1s infinite alternate;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1 id="error-message"><span class="emoji">❌🔑</span> Incorrect Password or Internet Error</h1>
+        <p id="redirect-message">Redirecting you to the login page in <span id="countdown">10</span> seconds...</p>
+    </div>
+
+    <script>
+        let countdown = 10;
+        const redirectUrl = 'signin.html';
+        const countdownElement = document.getElementById('countdown');
+
+        function updateCountdown() {
+            countdownElement.textContent = countdown;
+            
+            if (countdown === 5) {
+                countdownElement.classList.add('pulse');
+            }
+            
+            countdown--;
+
+            if (countdown < 0) {
+                window.location.href = redirectUrl;
+            } else {
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCountdown();
+        });
+    </script>
+</body>
+</html>
