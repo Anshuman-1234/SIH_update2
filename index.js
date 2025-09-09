@@ -7234,47 +7234,14 @@ app.post('/sign_in', async (req, res) => {
         res.status(500).send('An error occurred. Please try again later.');
     }
 });
-// app.post('/check-place', async (req, res) => {
-//   let place = req.body.place.trim().toLowerCase();
-//   try {
-//     const result = dataset.find(item => item.Name.toLowerCase().includes(place));
-//     if (result) {
-//       res.send({
-//         exists: true,
-//         zone: result.Zone,
-//         placeName: result.Name,
-//         City: result.City,
-//         img: result.img_link,
-//         state:result.State,
-//         type:result.Type,
-//         establishment:result['Establishment Year'],
-//         time:result['time needed to visit in hrs'],
-//         fees:result['Entrance Fee in INR'],
-//         airport:result['Airport with 50km Radius'],
-//         off:result['Weekly Off'],
-//         dslr:result['DSLR Allowed'],
-//         risk:result.Risk_Factor,
-//         risk_des:result.Risk_Factor_Description,
-//         visit_time:result.Best_Time_to_visit,
-//         safety:result.Safety_Precautions,
-
-//       });
-//     } else {
-//       res.send({ exists: false });
-//     }
-//   } catch (err) {
-//     res.status(500).send({ message: 'Error checking place' });
-//   }
-// });
-
-
+ 
 app.post('/check-place', async (req, res) => {
   let place = req.body.place.trim().toLowerCase();
 
   try {
     // Find all matching places
     const matchedPlaces = dataset.filter(item =>
-      item.Name.toLowerCase().includes(place)
+      item.Name.toLowerCase().includes(place) || item.City.toLowerCase().includes(place) ||  item.Zone.toLowerCase().includes(place)
     );
 
     if (matchedPlaces.length > 0) {
